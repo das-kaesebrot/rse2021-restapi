@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: FastAPI",
+            "name": "Python: FastAPI with reload",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "evi-api:app", "--reload"
+                "app.main:app", "--reload"
             ],
             "jinja": true
         }

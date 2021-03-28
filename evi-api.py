@@ -6,7 +6,8 @@ app = FastAPI()
 async def root():
     return {"reqpath": ""}
 
-@app.get("/{path}")
-async def echo(path):
+@app.get("/api/presets")
+async def presets():
+
     return {"reqpath": path}
     

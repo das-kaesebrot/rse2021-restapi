@@ -25,20 +25,18 @@ async def getPresets(response: Response):
 @app.post(path.join(basepath, presetspath), summary="createPreset()")
 async def createPreset(response: Response, x_auth_token: str = Header(None)):
     if not checkToken(x_auth_token):
-        response.status_code = status.HTTP_403_FORBIDDEN
+        response.status_code = status.HTTP_401_UNAUTHORIZED
         return {
-            "info": errorMsg.Info_FalseToken,
-            "success": False
+            "error": errorMsg.Info_FalseToken
         }
 
 # Get properties of a specific preset
 @app.get(path.join(basepath, presetspath, "{presetID}"), summary="getPreset(presetID)")
 async def getPreset(presetID: uuid.UUID, response: Response, x_auth_token: str = Header(None)):
     if not checkToken(x_auth_token):
-        response.status_code = status.HTTP_403_FORBIDDEN
+        response.status_code = status.HTTP_401_UNAUTHORIZED
         return {
-            "info": errorMsg.Info_FalseToken,
-            "success": False
+            "error": errorMsg.Info_FalseToken
         }
 
     return {"presetID": presetID}
@@ -47,20 +45,18 @@ async def getPreset(presetID: uuid.UUID, response: Response, x_auth_token: str =
 @app.put(path.join(basepath, presetspath, "{presetID}"), summary="updatePreset(presetID)")
 async def updatePreset(presetID: uuid.UUID, response: Response, x_auth_token: str = Header(None)):
     if not checkToken(x_auth_token):
-        response.status_code = status.HTTP_403_FORBIDDEN
+        response.status_code = status.HTTP_401_UNAUTHORIZED
         return {
-            "info": errorMsg.Info_FalseToken,
-            "success": False
+            "error": errorMsg.Info_FalseToken
         }
 
 # Delete a selected preset
 @app.delete(path.join(basepath, presetspath, "{presetID}"), summary="deletePreset(presetID)")
 async def deletePreset(presetID: uuid.UUID, response: Response, x_auth_token: str = Header(None)):
     if not checkToken(x_auth_token):
-        response.status_code = status.HTTP_403_FORBIDDEN
+        response.status_code = status.HTTP_401_UNAUTHORIZED
         return {
-            "info": errorMsg.Info_FalseToken,
-            "success": False
+            "error": errorMsg.Info_FalseToken
         }
 
 def checkToken(token: str):

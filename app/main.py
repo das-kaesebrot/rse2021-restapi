@@ -9,7 +9,7 @@ version: int = 1
 basepath: str = path.join("/", "api", f"v{version}", "evi")
 presetspath: str = "presets"
 
-tokenList: list = ["test"]
+tokenList: list = ["HerrFr03d3istC00l"]
 
 # Get all presets on server
 @app.get(path.join(basepath, presetspath), summary="getPresets()")
@@ -22,7 +22,7 @@ async def getPresets(response: Response):
     return {}
 
 # Create a preset
-@app.post(path.join(basepath, presetspath), summary="createPreset()")
+@app.post(path.join(basepath, presetspath), summary="createPreset()", status_code=201)
 async def createPreset(response: Response, x_auth_token: str = Header(None)):
     if not checkToken(x_auth_token):
         response.status_code = status.HTTP_401_UNAUTHORIZED

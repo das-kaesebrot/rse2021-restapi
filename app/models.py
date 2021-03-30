@@ -3,11 +3,11 @@ class Preset:
         self,
         id: int,
         name: str,
-        comment: str = "",
         saturation: float,
         eotf: str,
         colorGamut: str,
-        colorRange: str
+        colorRange: str,
+        comment: str = ""
     ):
         self.id = id
         self.name = name

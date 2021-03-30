@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Header, Response, status
 from os import path
 from app.errMessages import errorMsg
+from app.token import checkToken
 import uuid
 
 app = FastAPI()
@@ -8,8 +9,6 @@ app = FastAPI()
 version: int = 1
 basepath: str = path.join("/", "api", f"v{version}", "evi")
 presetspath: str = "presets"
-
-tokenList: list = ["HerrFr03d3istC00l"]
 
 # Get all presets on server
 @app.get(path.join(basepath, presetspath), summary="getPresets()")
@@ -58,9 +57,4 @@ async def deletePreset(presetID: uuid.UUID, response: Response, x_auth_token: st
         return {
             "error": errorMsg.Info_FalseToken
         }
-
-def checkToken(token: str):
-    if token in tokenList:
-        return True
-    else:
-        return False
+    

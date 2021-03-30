@@ -20,7 +20,9 @@ async def getPresets(response: Response, x_auth_token: str = Header(None)):
         return {
             "error": errorMsg.Info_FalseToken
         }
-    return {}
+    return {
+        "presets": ""
+    }
 
 # Create a preset
 @app.post(path.join(basepath, presetspath), summary="createPreset()", status_code=201)

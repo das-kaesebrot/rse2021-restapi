@@ -5,12 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Python: FastAPI with reload",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "app.main:app", "--reload"
+                "app.main:app",
+                "--reload"
             ],
             "jinja": true
         }

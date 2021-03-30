@@ -5,6 +5,7 @@ verify_ssl = true
 
 [packages]
 fastapi = {extras = ["all"], version = "*"}
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,0 +1,40 @@
+[
+{
+    "preset": {
+        "name": "HDR_Rec2100_PQ_narrow_042",
+        "comment": "",
+        "saturation": 1.1,
+        "eotf": "bt2100pq",
+        "colorGamut": "bt2100",
+        "colorRange": "narrow"
+    }
+},
+{
+    "preset": {
+        "id": 42,
+        "name": "HDR_Rec2100_PQ_narrow_042",
+        "comment": "",
+        "saturation": 1.1,
+        "eotf": "bt2100pq",
+        "colorGamut": "bt2100",
+        "colorRange": "narrow"
+    }
+},
+{
+    "preset": {
+        "name": "SDR_Rec709_full",
+        "colorRange": "full"
+    }
+},
+{
+    "preset": {
+        "id": 1337,
+        "name": "SDR_Rec709_full",
+        "comment": "",
+        "saturation": 1.0,
+        "eotf": "bt1886",
+        "colorGamut": "bt709",
+        "colorRange": "full"
+    }
+}
+]

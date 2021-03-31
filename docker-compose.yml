@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  fastapi:
+    build:
+      context: .
+    restart: always
+    ports:
+      - 8000:80
